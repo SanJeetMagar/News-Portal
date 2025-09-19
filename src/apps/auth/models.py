@@ -1,5 +1,5 @@
 from django.db import models
-from src.apps.common.models import Timestap as BaseModel
+from src.apps.common.models import TimestampModel as BaseModel
 from src.apps.common.utils import image_validate
 from django.contrib.auth.models import (
     AbstractUser,
