@@ -17,12 +17,10 @@ if version:
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("auth/", include("src.apps.auth.urls")),
-
-    path(f"{api_prefix}news/", include("src.apps.news.urls")),
+    path(f"{api_prefix}", include([
+        path("news/", include("src.apps.news.urls")),
+    ])),
 ]
-
-
-
 if settings.DEBUG:
     urlpatterns += [
         path("schema/", SpectacularAPIView.as_view(), name="schema"),
