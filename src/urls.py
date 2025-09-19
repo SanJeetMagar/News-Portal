@@ -16,9 +16,10 @@ if version:
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("auth/", include("src.apps.auth.urls")),
+
     path(f"{api_prefix}", include([
-        path("news/", include("src.apps.news.urls")),
+        path("auth/", include("src.apps.auth.urls")),
+        path("news/",include("src.apps.news.urls")),
     ])),
 ]
 if settings.DEBUG:
