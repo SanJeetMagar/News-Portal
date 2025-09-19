@@ -22,9 +22,6 @@ urlpatterns = [
         path("news/",include("src.apps.news.urls")),
     ])),
 ]
-
-
-
 if settings.DEBUG:
     urlpatterns += [
         path("schema/", SpectacularAPIView.as_view(), name="schema"),
