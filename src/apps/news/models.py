@@ -25,3 +25,31 @@ class Author(TimestampModel):
         if not self.slug and self.name:
             self.slug = generate_slug(self.name)
             super().save(*args, **kwargs)
+
+class Article(TimestampModel):
+    STATUS_CHOICES = (
+        ('draft','Draft'),
+        ('published', 'Published')
+    )
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    content = models.TextField()
+    excerpt = models.TextField(null=True, blank=True)
+    # author = 
+    # category =  
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="draft")
+    # feature_image = models.ImageField(upload_to=)
+
+
+    class Meta:
+        verbose_name = "Article"
+        verbose_name_plural= "Articles"
+
+    def  __str__(self) -> str:
+            return self.title
+    
+
+    def save(self, *args, **kwargs):
+         if not self.slug and self.title:
+              self.slug = generate_slug(self.title)
+              super().save(*args, **kwargs)

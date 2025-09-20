@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from .models import Author
-
+from .models import Author, Article
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,4 +15,15 @@ class AuthorSerializer(serializers.ModelSerializer):
             'twitter': {'required': False},
             "instagram" :{'required': False},
             "linkedin": {'required':False},
+        }
+
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = "__all__"
+        extra_kwargs = {
+            'slug' : {'read_only':True},
+            'excerpt': {'required': False},
+            
         }
