@@ -20,6 +20,7 @@ urlpatterns = [
     path(f"{api_prefix}", include([
         path("auth/", include("src.apps.auth.urls")),
         path("news/",include("src.apps.news.urls")),
+        path("interactions/",include('src.apps.interactions.urls')),
     ])),
 ]
 if settings.DEBUG:
