@@ -25,5 +25,10 @@ class ArticleSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'slug' : {'read_only':True},
             'excerpt': {'required': False},
-            
+            'category':{'required': False},
+            'authors': {'required': False},
+            'feature_image':{'required': False},
+                   
         }
+
+#
