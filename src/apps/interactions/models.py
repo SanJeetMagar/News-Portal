@@ -28,8 +28,11 @@ class Comment(TimestampModel):
 
 class Reaction(TimestampModel):
     REACTIONS = (
-        ("like", "Like"),
-        ("dislike", "Dislike"),
+        ('happy', 'Happy'),
+        ('sad', 'Sad'),
+        ('angry', 'Angry'),
+        ('love', 'Love'),
+        ('surprised', 'Surprised'),
     )
 
     user = models.ForeignKey(
@@ -49,9 +52,13 @@ class Reaction(TimestampModel):
 
 class CommentReaction(TimestampModel):
     REACTIONS = (
-        ("like", "Like"),
-        ("dislike", "Dislike"),
+        ('happy', 'Happy'),
+        ('sad', 'Sad'),
+        ('angry', 'Angry'),
+        ('love', 'Love'),
+        ('surprised', 'Surprised'),
     )
+
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comment_reactions")
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE, related_name="reactions")
