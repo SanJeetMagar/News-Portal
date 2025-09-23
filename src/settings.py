@@ -43,19 +43,19 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "rest_framework.authtoken",
     "corsheaders",
-
-    
-
     'django_filters',
-
     'drf_spectacular',
     "drf_standardized_errors",
-
     'src.apps.auth',
     'src.apps.news',
     "src.apps.common",
     'src.apps.interactions',
     'src.apps.news_media',
+    'src.apps.ads',
+    'src.apps.analytics',
+    'src.apps.categories',
+    
+
 
 ]
 
