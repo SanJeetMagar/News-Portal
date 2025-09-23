@@ -21,6 +21,7 @@ urlpatterns = [
         path("auth/", include("src.apps.auth.urls")),
         path("news/",include("src.apps.news.urls")),
         path("interactions/",include('src.apps.interactions.urls')),
+        path("news_media/", include("src.apps.news_media.urls")),
     ])),
 ]
 if settings.DEBUG:
