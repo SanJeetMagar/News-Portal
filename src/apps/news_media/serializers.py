@@ -1,0 +1,13 @@
+from .models import Media
+from rest_framework import serializers
+
+
+class MediaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Media
+        fields = "__all__"
+        extra_kwargs = {
+            'file': {'required': False},
+            'title' : {'required':False },
+            'alt_txt': {'required': False}, 
+        }   

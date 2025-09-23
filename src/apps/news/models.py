@@ -82,3 +82,7 @@ class Article(TimestampModel):
         if not self.slug and self.title:
             self.slug = generate_unique_slug(self, self.title)
         super().save(*args, **kwargs)
+
+
+
+# class Media(TimestampModel):

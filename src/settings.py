@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'src.apps.news',
     "src.apps.common",
     'src.apps.interactions',
+    'src.apps.news_media',
 
 ]
 
