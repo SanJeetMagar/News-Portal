@@ -32,10 +32,10 @@ class CommentSerializer(serializers.ModelSerializer):
         child=serializers.IntegerField()
     ))
     def get_reactions(self, obj):
-        # Returns count of likes/dislikes
+        # Returns count of each reaction type
         return {
-            "likes": obj.reactions.filter(reaction_type="like").count(),
-            "dislikes": obj.reactions.filter(reaction_type="dislike").count(),
+            reaction_type: obj.comment_reactions.filter(reaction_type=reaction_type).count()
+            for reaction_type, _ in CommentReaction.REACTIONS
         }
 
     def create(self, validated_data):
