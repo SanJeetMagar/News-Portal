@@ -11,6 +11,7 @@ from django.contrib.auth.models import (
 class Role(models.TextChoices):
     SUPERADMIN = "superadmin", "SuperAdmin"
     ADMIN = "admin", "Admin"
+    ADVERTISER = "advertiser", "Advertiser"
     EDITOR = "editor", "Editor"
     AUTHOR = "author", "Author"
     USER = "user", "User"
