@@ -47,13 +47,14 @@ INSTALLED_APPS = [
     'drf_spectacular',
     "drf_standardized_errors",
     'src.apps.auth',
-    'src.apps.news',
+    'src.apps.articles',
     "src.apps.common",
     'src.apps.interactions',
     'src.apps.news_media',
     'src.apps.ads',
     'src.apps.analytics',
     'src.apps.categories',
+    'src.apps.authors',
     
 
 
