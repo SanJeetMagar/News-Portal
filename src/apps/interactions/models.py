@@ -1,5 +1,5 @@
 from django.db import models
-from src.apps.news.models import Article
+from src.apps.articles.models import Article
 from src.apps.common.models import TimestampModel
 from django.contrib.auth import get_user_model
 

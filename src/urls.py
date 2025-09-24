@@ -19,9 +19,12 @@ urlpatterns = [
 
     path(f"{api_prefix}", include([
         path("auth/", include("src.apps.auth.urls")),
-        path("news/",include("src.apps.news.urls")),
-        path("interactions/",include('src.apps.interactions.urls')),
+        path("articles/", include("src.apps.articles.urls")),
+        path("interactions/", include("src.apps.interactions.urls")),
         path("news_media/", include("src.apps.news_media.urls")),
+        path("ads/", include("src.apps.ads.urls")),
+        path('authors/', include('src.apps.authors.urls')),
+        path('categories/', include('src.apps.categories.urls')),
     ])),
 ]
 if settings.DEBUG:
