@@ -25,3 +25,10 @@ class AuthorDetailSerializer(serializers.ModelSerializer):
     ))
     def get_articles(self, obj):
         return [{"id": a.id, "title": a.title, "status": a.status} for a in obj.articles.all()]
+
+class BaseAuthorSerializers(serializers.ModelSerializer):
+    class Meta:
+        model= Author
+        fields = [
+            "id","name", "slug"
+        ]
